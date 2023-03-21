@@ -6,10 +6,19 @@
 //
 
 import Foundation
+import Combine
+
+final class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json")
+    var hikes: [Hike] = load("hikeData.json")
+
+}
+
+
+
 
 //load(_:) Uygulamanın ana paketinden belirli bir ada sahip JSON verilerini alan bir yöntem oluştururuz."Yükleme yöntemi geri dönüş türünün, protokolün bir bileşeni olan protokole uygunluğuna dayanır Codable"
 
-var landmarks: [Landmark] = load("landmarkData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
