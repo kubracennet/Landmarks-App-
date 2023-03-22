@@ -6,11 +6,12 @@
 //hikedata.json dosyası içerisinde yer alan bana lazım olan şeyleri buarad belirteceğim.
 
 import Foundation
+
 struct Hike: Codable, Hashable, Identifiable {
     var id: Int
     var name: String
     var distance: Double
-    var diffuculty: Int
+    var difficulty: Int
     var observations: [Observation]
     
     static var formatter = LengthFormatter()
